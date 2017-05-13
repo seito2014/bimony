@@ -148,6 +148,11 @@ library
     }
     &-list {
         padding: 0 18px;
+
+        @include queryLager($break-large) {
+            padding: 0;
+        }
+
         > li {
             padding: 18px 0;
             border-bottom: 1px dashed $color-base;
@@ -764,5 +769,26 @@ library
                 color: $color-main;
             }
         }
+    }
+}
+
+.banner {
+    display: block;
+    background-color: #000;
+
+    img {
+        transition: opacity $duration $easing;
+    }
+
+    &:hover {
+        img {
+            opacity: .7;
+        }
+    }
+}
+
+.sidebar-sp {
+    @include queryLager($break-large) {
+        display: none;
     }
 }

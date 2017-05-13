@@ -46,7 +46,7 @@ var type = "blog";
         </div>
     </div>
 
-    <div class="l-container">
+    <div class="l-container u-clear">
         <div class="l-main">
             <div class="l-index-recommend">
                 <div class="recommend">
@@ -118,12 +118,18 @@ var type = "blog";
 
         <div class="l-sidebar">
             <%- include("./view/module/_ranking") %>
+            <div class="l-sidebar-banner">
+                <a class="banner" href="">
+                    <img src="http://placekitten.com/350/350" alt="">
+                </a>
+            </div>
         </div>
     </div>
 
+    <div class="sidebar-sp">
         <%- include("./view/module/_ranking") %>
         <%- include("./view/module/_dictionary") %>
-
+    </div>
 
 </div>
 

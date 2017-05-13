@@ -38,8 +38,8 @@ style comment.
         &:hover {
             text-decoration: none;
 
-            #{$this}-thumbnail > img {
-                transform: scale(1.2);
+            #{$this}-heading {
+                color: $color-main;
             }
         }
     }
