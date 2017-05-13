@@ -4,18 +4,15 @@
 @import "1-setting/color";
 @import "1-setting/config";
 @import "1-setting/font";
-
 /*
 * 2-mixin
 */
 @import "2-mixin/mixin";
-
 /*
 * 3-base
 */
 @import "3-base/reset";
 @import "3-base/generic";
-
 /*
 * 4-layout
 */
@@ -26,7 +23,6 @@
 @import "4-layout/l-sidebar";
 @import "4-layout/l-grid";
 @import "4-layout/l-index";
-
 /*
 * 5-module
 */
@@ -48,7 +44,6 @@
 @import "5-module/input";
 @import "5-module/textarea";
 @import "5-module/share";
-
 /*
 * 6-utility
 */
@@ -71,5 +66,202 @@
     }
     &-info {
         font-size: 10px;
+    }
+}
+
+.link {
+
+    &-inner {
+        display: block;
+        text-align: center;
+        padding: 20px 0;
+        color: #EB8E6C;
+        font-size: 16px;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    &-text {
+        vertical-align: middle;
+        text-decoration: none;
+    }
+    &-arrow {
+        margin-left: 5px;
+        display: inline-block;
+        vertical-align: middle;
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid #EB8E6C;
+        border-right: 2px solid #EB8E6C;
+        transform: rotate(45deg);
+    }
+}
+
+.heading {
+    padding: 0 18px 12px;
+    border-bottom: 2px solid #EB8E6C;
+    &-icon {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+    &-text {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 12px;
+    }
+}
+
+.ranking {
+    &-heading {
+    }
+    &-list {
+        padding: 0 18px;
+        > li {
+            padding: 18px 0;
+            border-bottom: 1px dashed $color-base;
+        }
+    }
+
+    &-link {
+    }
+}
+
+.book-heading {
+    text-align: center;
+    &-inner {
+        display: inline-block;
+    }
+    &-icon {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        position: relative;
+        top: 4px;
+    }
+    &-text {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 28px;
+    }
+}
+
+.search {
+    border-radius: 52px;
+    padding: 6px 0 6px 10px;
+    border: 2px solid #EB8E6C;
+    background-color: #fff;
+    position: relative;
+    &-icon {
+        display: inline-block;
+        vertical-align: middle;
+        transform: translateY(2px) scaleX(-1);
+        opacity: .5;
+    }
+    &-input {
+        margin-left: 5px;
+        display: inline-block;
+        vertical-align: middle;
+        width: calc(100% - 90px);
+        font-size: 11px;
+        opacity: .5;
+        &:focus {
+            opacity: 1;
+        }
+    }
+    &-button {
+        border-radius: 32px;
+        background-color: #EB8E6C;
+        font-size: 12px;
+        color: #fff;
+        padding: 8px 16px;
+        position: absolute;
+        right: 2px;
+        top: 2px;
+    }
+}
+
+.keywords {
+    background-color: #F2F0E1;
+    padding: 32px 0;
+
+    &-title {
+        display: inline-block;
+        font-size: 12px;
+        background-color: #fff;
+        padding: 5px 5px 5px 18px;
+        margin-bottom: 5px;
+    }
+    &-data {
+        padding: 0 18px;
+        a {
+            color: $color-default;
+            font-size: 14px;
+        }
+    }
+}
+
+.dictionary {
+    &-heading {
+        margin-bottom: 10px;
+    }
+    &-search {
+        padding: 0 18px;
+    }
+    &-keywords {
+        margin-top: -20px;
+        margin-bottom: 50px;
+    }
+    &-list {
+        padding: 0 18px;
+        > li {
+            border-bottom: 1px dashed $color-base;
+        }
+    }
+}
+
+.word {
+    display: block;
+    padding: 12px 0;
+    &:hover {
+        text-decoration: none;
+    }
+    &-inner {
+
+    }
+    &-title {
+        margin-bottom: 13px;
+        &-icon {
+            display: inline-block;
+            vertical-align: middle;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: #EB8E6C;
+            svg {
+                transform: scaleX(-1);
+                width: 12px;
+                height: 12px;
+            }
+            path {
+                fill: #fff;
+            }
+        }
+        &-text {
+            margin-left: 5px;
+            display: inline-block;
+            vertical-align: middle;
+            font-family: $font-min;
+            color: #EB8E6C;
+            font-size: 20px;
+        }
+    }
+    &-data {
+        font-size: 12px;
+        color: #555;
     }
 }
