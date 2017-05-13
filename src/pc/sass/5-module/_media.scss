@@ -1,0 +1,88 @@
+/*
+#overview
+media
+*/
+
+/*
+#styleguide
+media
+style comment.
+```
+<article class="media">
+    <a class="media-link u-clear" href="">
+        <div class="media-thumbnail">
+            <img src="http://placekitten.com/200/120" height="120" width="200" alt="">
+        </div>
+        <div class="media-body">
+            <time class="media-date" datetime="yyyy-mm-ddT00:00+09:00">
+                <i class="media-icon icon icon-clock"></i>mm/dd
+            </time>
+            <h1 class="media-heading">Title</h1>
+            <p class="media-description">Sample text Sample text Sample text Sample text Sample text Sample text Sample text Sample text...</p>
+        </div>
+    </a>
+</article>
+```
+*/
+
+.media {
+
+    $this: &;
+
+    &-link {
+        display: block;
+        width: 100%;
+        color: $color-default;
+        background-color: #fff;
+
+        &:hover {
+            text-decoration: none;
+
+            #{$this}-thumbnail > img {
+                transform: scale(1.2);
+            }
+        }
+    }
+    &-thumbnail {
+        width: 45%;
+        float: left;
+        position: relative;
+
+        > img {
+            width: 100%;
+            height: auto;
+            transition: transform $duration $easing;
+        }
+    }
+    &-rank {
+        position: absolute;
+        left: -5px;
+        top: -5px;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 14px;
+        color: #fff;
+        text-align: center;
+        display: block;
+        border-radius: 50%;
+        background-color: #FA8964;
+    }
+    &-body {
+        position: relative;
+        margin-left: calc(45% + 10px);
+    }
+    &-heading {
+        margin-top: 7px;
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    &-date {
+        padding: 7px 0;
+        color: $color-gray;
+        font-size: 10px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}

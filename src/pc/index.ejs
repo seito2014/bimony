@@ -1,0 +1,54 @@
+<% include view/const/_const %>
+<%
+var id = "index";
+var title = "";
+var description = "sample text,sample tex";
+var keywords = "word1,word2,word3";
+var type = "blog";
+%>
+<% include view/metadata/_head %>
+<% include view/layout/_l-header %>
+
+<!--start l-contents-->
+<div class="l-container u-clear">
+
+    <div class="l-index">
+        <ul class="l-index-list">
+            <% for(var iMedia = 0; iMedia < mediaRankingArray.length; iMedia++) { %>
+            <li>
+                <%- include("./view/module/_media", {
+                    num: iMedia + 1,
+                    mf: "media-ranking",
+                    img: mediaRankingArray[iMedia].img.src,
+                    height: mediaRankingArray[iMedia].img.height,
+                    width: mediaRankingArray[iMedia].img.width,
+                    alt: mediaRankingArray[iMedia].img.alt,
+                    cat: {
+                        mf: mediaRankingArray[iMedia].category,
+                        text: "目・aa"
+                    },
+                    heading: mediaRankingArray[iMedia].heading,
+                    author: {
+                        mf: mediaRankingArray[iMedia].author.mf,
+                        img: mediaRankingArray[iMedia].author.img,
+                        authorName: mediaRankingArray[iMedia].author.authorName,
+                        info: mediaRankingArray[iMedia].author.info
+                    }
+                }) %>
+            </li>
+            <% } %>
+        </ul>
+        <div class="l-index-button">
+            <a class="button" href="">
+                <span class="button-text">Button more</span>
+            </a>
+        </div>
+    </div>
+
+    <% include view/layout/_l-sidebar %>
+
+</div>
+<!--end l-contents-->
+
+<% include view/layout/_l-footer %>
+<% include view/metadata/_script %>
