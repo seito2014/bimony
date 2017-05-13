@@ -100,6 +100,8 @@ library
 
 .link {
 
+    $this: &;
+
     &-inner {
         display: block;
         text-align: center;
@@ -110,6 +112,10 @@ library
 
         &:hover {
             text-decoration: none;
+
+            #{$this}-arrow {
+                right: -10px;
+            }
         }
     }
     &-text {
@@ -125,6 +131,9 @@ library
         border-top: 2px solid #EB8E6C;
         border-right: 2px solid #EB8E6C;
         transform: rotate(45deg);
+        position: relative;
+        right: 0;
+        transition: right $duration $easing;
     }
 }
 
@@ -531,6 +540,12 @@ library
 
         &:hover {
             text-decoration: none;
+
+            #{$this}-img{
+                > img {
+                    transform: scale(1.2);
+                }
+            }
         }
     }
 
@@ -547,10 +562,12 @@ library
 
     &-img {
         position: relative;
+        overflow: hidden;
 
         > img {
             width: 100%;
             height: auto;
+            transition: transform $duration $easing;
         }
     }
 
