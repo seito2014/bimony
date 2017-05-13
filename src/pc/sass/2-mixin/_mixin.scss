@@ -10,6 +10,13 @@
     }
 }
 
+@mixin querySmaller($size) {
+    @media all and (min-width: $size) {
+        @content;
+    }
+}
+
+
 //this id used in sprite smith(gulp task)
 @mixin sprite-width($sprite, $scale: 1) {
     width: ceil(nth($sprite, 5) * $scale);

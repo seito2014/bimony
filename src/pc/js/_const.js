@@ -1,6 +1,6 @@
 module.exports = {
     ACTIVE_CLASS: 'is-active',
-    BREAK_POINT: 980,
+    BREAK_POINT: 1024,
     DURATION: 250,
     $window: $(window),
     $document: $(document),

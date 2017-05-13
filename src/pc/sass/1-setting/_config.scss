@@ -26,6 +26,6 @@ $easing: ease-in-out;
 $delay: .35s;
 
 //etc
-$site-size: 1080px + 60;
+$site-size: $break-large + 60;
 $z-max: 10;
 $opacity: .8;

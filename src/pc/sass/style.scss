@@ -336,10 +336,58 @@ library
     }
 
     &-slider {
+        position: relative;
         margin-top: -100px;
 
         .slick-slide {
             padding: 0 18px;
+        }
+    }
+
+    .slick-list {
+        position: relative;
+        z-index: 2;
+    }
+
+    .slick-arrow {
+        display: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        background-color: #EB8E6C;
+        font-size: 0;
+        position: absolute;
+        z-index: 3;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &:after {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid #fff;
+            border-right: 2px solid #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+
+        @include querySmaller($break-large){
+            display: block;
+        }
+    }
+
+    .slick-prev {
+        left: 20px;
+        &:after {
+            transform: translate(-50%, -50%) rotate(-135deg);
+        }
+    }
+    .slick-next {
+        right: 20px;
+        &:after {
+            transform: translate(-50%, -50%) rotate(45deg);
         }
     }
 
@@ -370,13 +418,24 @@ library
 
 .card {
     $this: &;
+
+    position: relative;
+    overflow: hidden;
+
+    @include querySmaller($break-large){
+        width: 420px;
+    }
     
     &-link {
         display: block;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
         color: #fff;
+
+        &:hover {
+            text-decoration: none;
+            #{$this}-img {
+                transform: scale(1.2);
+            }
+        }
     }
 
     &-category {
@@ -386,6 +445,11 @@ library
     &-inner {
         padding: 10px;
         position: relative;
+        z-index: 2;
+
+        @include querySmaller($break-large){
+            padding: 20px;
+        }
     }
 
     &-new {
@@ -398,6 +462,23 @@ library
     &-heading {
         font-size: 14px;
         margin: 32px 0 10px;
+
+        @include querySmaller($break-large){
+            font-size: 18px;
+        }
+    }
+
+    &-img {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        transition: transform $duration $easing;
     }
     
     //modifier
