@@ -1,4 +1,7 @@
 .l-main {
-    float: left;
-    width: 760px;
+
+    @include queryLager($break-large) {
+        float: left;
+        width: 760px;
+    }
 }

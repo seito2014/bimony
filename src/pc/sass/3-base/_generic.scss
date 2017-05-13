@@ -33,6 +33,12 @@ body {
     color: $color-default;
     width: 100%;
     letter-spacing: $base-letter-spacing;
+
+    padding-top: 68px;
+
+    @include queryLager($break-large) {
+        padding-top: 100px;
+    }
 }
 
 input,

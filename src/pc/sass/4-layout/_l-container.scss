@@ -3,7 +3,7 @@
     margin: 0 auto;
     position: relative;
 
-    @include querySmaller($break-large){
+    @include queryLager($break-large){
         width: $break-large;
     }
 }

@@ -1,4 +1,9 @@
 .l-header {
+    position: fixed;
+    z-index: $z-max;
+    width: 100%;
+    left: 0;
+    top: 0;
     background-color: #fff;
     padding: 15px 18px;
 
@@ -8,5 +13,17 @@
     &-right {
         float: right;
         margin-top: 5px;
+    }
+    &-gnav {
+        display: none;
+
+        @include queryLager($break-large){
+            display: block;
+        }
+    }
+    &-trigger {
+        @include queryLager($break-large){
+            display: none;
+        }
     }
 }

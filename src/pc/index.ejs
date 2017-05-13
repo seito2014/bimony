@@ -46,75 +46,84 @@ var type = "blog";
         </div>
     </div>
 
-    <div class="l-index-recommend">
-        <div class="recommend">
-            <div class="recommend-heading">
-                <%- include("./view/module/_heading", {
-                icon: include("./view/svg/_stars"),
-                text: "オススメ記事"
-                }); %>
-            </div>
+    <div class="l-container">
+        <div class="l-main">
+            <div class="l-index-recommend">
+                <div class="recommend">
+                    <div class="recommend-heading">
+                        <%- include("./view/module/_heading", {
+                        icon: include("./view/svg/_stars"),
+                        text: "オススメ記事"
+                        }); %>
+                    </div>
 
-            <div class="recommend-latest">
-                <%- include("./view/module/_panel", {
-                num: 1,
-                mf: "panel-primary panel-" + mediaArray[0].category,
-                img: mediaArray[0].img.src,
-                height: mediaArray[0].img.height,
-                width: mediaArray[0].img.width,
-                alt: mediaArray[0].img.alt,
-                cat: {
-                mf: mediaArray[0].category,
-                text: "目・二重の整形"
-                },
-                heading: mediaArray[0].heading,
-                author: {
-                mf: mediaArray[0].author.mf,
-                img: mediaArray[0].author.img,
-                authorName: mediaArray[0].author.authorName,
-                info: mediaArray[0].author.info
-                }
-                }) %>
-            </div>
-
-            <div class="recommend-grid l-grid l-grid-col3 l-grid-lg-col2">
-                <ul class="recommend-grid-inner l-grid-inner">
-                    <% for(var iMedia = 0; iMedia < mediaArray.length; iMedia++) { %>
-                    <li class="recommend-grid-item l-grid-item">
+                    <div class="recommend-latest">
                         <%- include("./view/module/_panel", {
-                        num: iMedia + 1,
-                        mf: "panel-" + mediaArray[iMedia].category,
-                        img: mediaArray[iMedia].img.src,
-                        height: mediaArray[iMedia].img.height,
-                        width: mediaArray[iMedia].img.width,
-                        alt: mediaArray[iMedia].img.alt,
+                        num: 1,
+                        mf: "panel-primary panel-" + mediaArray[0].category,
+                        img: mediaArray[0].img.src,
+                        height: mediaArray[0].img.height,
+                        width: mediaArray[0].img.width,
+                        alt: mediaArray[0].img.alt,
                         cat: {
-                        mf: mediaArray[iMedia].category,
+                        mf: mediaArray[0].category,
                         text: "目・二重の整形"
                         },
-                        heading: mediaArray[iMedia].heading,
+                        heading: mediaArray[0].heading,
                         author: {
-                        mf: mediaArray[iMedia].author.mf,
-                        img: mediaArray[iMedia].author.img,
-                        authorName: mediaArray[iMedia].author.authorName,
-                        info: mediaArray[iMedia].author.info
+                        mf: mediaArray[0].author.mf,
+                        img: mediaArray[0].author.img,
+                        authorName: mediaArray[0].author.authorName,
+                        info: mediaArray[0].author.info
                         }
                         }) %>
-                    </li>
-                    <% } %>
-                </ul>
+                    </div>
+
+                    <div class="recommend-grid l-grid l-grid-col3 l-grid-lg-col2">
+                        <ul class="recommend-grid-inner l-grid-inner">
+                            <% for(var iMedia = 0; iMedia < mediaArray.length; iMedia++) { %>
+                            <li class="recommend-grid-item l-grid-item">
+                                <%- include("./view/module/_panel", {
+                                num: iMedia + 1,
+                                mf: "panel-" + mediaArray[iMedia].category,
+                                img: mediaArray[iMedia].img.src,
+                                height: mediaArray[iMedia].img.height,
+                                width: mediaArray[iMedia].img.width,
+                                alt: mediaArray[iMedia].img.alt,
+                                cat: {
+                                mf: mediaArray[iMedia].category,
+                                text: "目・二重の整形"
+                                },
+                                heading: mediaArray[iMedia].heading,
+                                author: {
+                                mf: mediaArray[iMedia].author.mf,
+                                img: mediaArray[iMedia].author.img,
+                                authorName: mediaArray[iMedia].author.authorName,
+                                info: mediaArray[iMedia].author.info
+                                }
+                                }) %>
+                            </li>
+                            <% } %>
+                        </ul>
+                    </div>
+                    <div class="recommend-link">
+                        <%- include("./view/module/_link", {
+                        mf: "",
+                        text: "お悩み・施術別にさがす"
+                        }); %>
+                    </div>
+                </div>
             </div>
-            <div class="recommend-link">
-                <%- include("./view/module/_link", {
-                mf: "",
-                text: "お悩み・施術別にさがす"
-                }); %>
-            </div>
+        </div>
+
+        <div class="l-sidebar">
+            <%- include("./view/module/_ranking") %>
         </div>
     </div>
 
-    <%- include("./view/module/_ranking") %>
-    <%- include("./view/module/_dictionary") %>
+        <%- include("./view/module/_ranking") %>
+        <%- include("./view/module/_dictionary") %>
+
 
 </div>
 

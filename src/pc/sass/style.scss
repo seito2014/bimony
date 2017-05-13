@@ -23,12 +23,10 @@
 @import "4-layout/l-sidebar";
 @import "4-layout/l-grid";
 @import "4-layout/l-index";
-
 /*
 library
 */
 @import "../lib/slick-carousel/slick/slick.css";
-
 /*
 * 5-module
 */
@@ -80,7 +78,7 @@ library
 
     //modifier
     &-card {
-        #{$this}{
+        #{$this} {
             &-body {
                 color: #fff;
             }
@@ -373,7 +371,7 @@ library
             top: 50%;
         }
 
-        @include querySmaller($break-large){
+        @include queryLager($break-large) {
             display: block;
         }
     }
@@ -422,10 +420,10 @@ library
     position: relative;
     overflow: hidden;
 
-    @include querySmaller($break-large){
+    @include queryLager($break-large) {
         width: 420px;
     }
-    
+
     &-link {
         display: block;
         color: #fff;
@@ -447,7 +445,7 @@ library
         position: relative;
         z-index: 2;
 
-        @include querySmaller($break-large){
+        @include queryLager($break-large) {
             padding: 20px;
         }
     }
@@ -463,7 +461,7 @@ library
         font-size: 14px;
         margin: 32px 0 10px;
 
-        @include querySmaller($break-large){
+        @include queryLager($break-large) {
             font-size: 18px;
         }
     }
@@ -480,7 +478,7 @@ library
         background-size: cover;
         transition: transform $duration $easing;
     }
-    
+
     //modifier
     &-a {
         #{$this}-inner {
@@ -570,7 +568,7 @@ library
 
     //modifier
     &-primary {
-        #{$this}{
+        #{$this} {
             &-inner {
                 padding: 0 10px;
                 margin-top: -42px;
@@ -608,23 +606,50 @@ library
     &-latest {
         padding: 0 10px 10px;
         border-bottom: 1px solid $color-base;
+
+        @include queryLager($break-large) {
+            display: none;
+        }
     }
     &-grid {
-        &-inner {}
+        &-inner {
+        }
         &-item {
             padding: 10px;
             border-bottom: 1px solid $color-base;
 
-            &:nth-child(odd){
-                border-right: 1px solid $color-base;
+            @include queryLager($break-large) {
+                border: 0;
             }
-            &:nth-child(even){
+
+            &:nth-child(odd) {
+                border-right: 1px solid $color-base;
+
+                @include queryLager($break-large) {
+                    border: 0;
+                }
+            }
+            &:nth-child(even) {
                 border-right: 1px solid transparent;
+
+                @include queryLager($break-large) {
+                    border: 0;
+                }
+            }
+            &:nth-child(5),
+            &:nth-child(6),
+            &:nth-child(7),
+            &:nth-child(8),
+            &:nth-child(9) {
+                display: none;
+
+                @include queryLager($break-large) {
+                    display: inline-block;
+                }
             }
         }
     }
 }
-
 
 .nav {
     $this: &;
@@ -719,6 +744,25 @@ library
     &.is-active {
         #{$this}-inner {
             transform: translate3d(0, 0, 0);
+        }
+    }
+}
+
+.gnav {
+    padding: 20px 0;
+    &-list {
+        margin: 0 -20px;
+    }
+    &-item {
+        display: inline-block;
+        padding: 0 20px;
+        > a {
+            color: $color-default;
+            text-decoration: none;
+            
+            &:hover {
+                color: $color-main;
+            }
         }
     }
 }

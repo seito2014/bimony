@@ -10,7 +10,7 @@
     }
 }
 
-@mixin querySmaller($size) {
+@mixin queryLager($size) {
     @media all and (min-width: $size) {
         @content;
     }
