@@ -305,6 +305,10 @@ library
     display: block;
     width: 38px;
 
+    &:hover {
+        text-decoration: none;
+    }
+
     > span {
         display: block;
         background-color: $color-gray;
@@ -540,3 +544,100 @@ library
     }
 }
 
+
+.nav {
+    $this: &;
+
+    position: fixed;
+    z-index: $z-max;
+    width: 100%;
+    height: 100%;
+    display: none;
+
+    &-inner {
+        padding-top: 50px;
+        position: absolute;
+        z-index: $z-max + 2;
+        right: 0;
+        top: 0;
+        width: 80%;
+        height: 100%;
+        background-color: #fff;
+        transform: translate3d(100%, 0, 0);
+        transition: transform $duration $easing;
+    }
+
+    &-trigger {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        color: $color-default;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        > span {
+            display: block;
+            width: 20px;
+            height: 4px;
+            background-color: $color-default;
+            position: absolute;
+            left: 2px;
+            top: 8px;
+
+            &:nth-child(1) {
+                transform: rotate(45deg);
+            }
+            &:nth-child(2) {
+                transform: rotate(-45deg);
+            }
+        }
+        &-text {
+            margin-top: 24px;
+            font-size: 8px;
+        }
+    }
+    &-menu {
+        padding-bottom: 20px;
+        &:last-of-type {
+            padding-bottom: 0;
+        }
+
+        > dt {
+            padding: 5px 18px;
+            font-size: 12px;
+            color: #555;
+            background-color: #F2F0E1;
+        }
+        > dd {
+            > a {
+                display: block;
+                font-size: 16px;
+                padding: 10px 10px 10px 36px;
+                color: $color-default;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+    &-back {
+        position: fixed;
+        z-index: $z-max + 1;
+        left: 0;
+        top: -25%;
+        width: 100%;
+        height: 150%;
+        background-color: rgba(#000, .5);
+        cursor: pointer;
+    }
+
+    //state
+    &.is-active {
+        #{$this}-inner {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+}
