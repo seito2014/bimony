@@ -88,6 +88,8 @@ library
                 display: inline-block;
                 vertical-align: middle;
                 font-size: 11px;
+                padding-right: 5px;
+                border-right: 1px solid #fff;
             }
             &-info {
                 display: inline-block;
@@ -317,17 +319,21 @@ library
 }
 
 .hero {
-    padding: 20px 0;
-    background-color: #F2F0E1;
+
+    &-inner {
+        background-color: #F2F0E1;
+        padding: 20px 0 120px;
+    }
 
     &-heading {
         text-align: center;
         font-size: 14px;
         letter-spacing: .05em;
-        margin-bottom: 20px;
     }
 
     &-slider {
+        margin-top: -100px;
+
         .slick-slide {
             padding: 0 18px;
         }
@@ -375,6 +381,14 @@ library
 
     &-inner {
         padding: 10px;
+        position: relative;
+    }
+
+    &-new {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 3;
     }
 
     &-heading {
@@ -396,6 +410,132 @@ library
     &-c {
         #{$this}-inner {
             background-color: rgba(#1CB0E0, .5);
+        }
+    }
+}
+
+.new {
+    width: 34px;
+    height: 34px;
+    color: #fff;
+    background-color: #E2264D;
+    border-radius: 0 0 100% 0;
+    font-size: 9px;
+    position: relative;
+
+    > span {
+        position: absolute;
+        transform: rotate(-45deg) translate(-2px, 7px);
+    }
+}
+
+.panel {
+    $this: &;
+
+    border-top: 4px solid transparent;
+
+    &-link {
+        display: block;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        color: $color-default;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &-meta {
+        overflow: hidden;
+    }
+
+    &-time {
+        float: right;
+        font-size: 9px;
+        color: $color-gray;
+        padding: 9px 0;
+    }
+
+    &-img {
+        position: relative;
+
+        > img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &-new {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 3;
+    }
+
+    &-inner {
+        padding-top: 10px;
+    }
+
+    &-heading {
+        font-size: 12px;
+        margin: 5px 0 10px;
+        height: 57px;
+    }
+
+    //modifier
+    &-primary {
+        #{$this}{
+            &-inner {
+                padding: 0 10px;
+                margin-top: -42px;
+                position: relative;
+                z-index: 2;
+            }
+            &-heading {
+                margin-top: 20px;
+                height: auto;
+            }
+            &-time {
+                display: none;
+            }
+        }
+    }
+
+    //modifier color
+    &-a {
+        border-color: #FFA93D;
+    }
+    &-b {
+        border-color: #5FBF00;
+    }
+    &-c {
+        border-color: #1CB0E0;
+    }
+}
+
+.recommend {
+    border-bottom: 4px solid #F2F0E1;
+
+    &-heading {
+        margin-bottom: 15px;
+    }
+    &-latest {
+        padding: 0 10px 10px;
+        border-bottom: 1px solid $color-base;
+    }
+    &-grid {
+        &-inner {}
+        &-item {
+            padding: 10px;
+            border-bottom: 1px solid $color-base;
+
+            &:nth-child(odd){
+                border-right: 1px solid $color-base;
+            }
+            &:nth-child(even){
+                border-right: 1px solid transparent;
+            }
         }
     }
 }

@@ -1,20 +1,24 @@
-<article class="card <%= mf %>">
-    <a class="card-link" href="" style="background-image: url(<%= img %>);">
-        <div class="card-inner">
-            <div class="card-new">
+<article class="panel <%= mf %>">
+    <a class="panel-link" href="">
+        <div class="panel-img">
+            <div class="panel-new">
                 <div class="new">
                     <span>NEW</span>
                 </div>
             </div>
-            <div class="card-category">
+            <img src="<%= img %>" alt="">
+        </div>
+        <div class="panel-inner">
+            <div class="panel-meta">
                 <%- include("_category", {
                 mf: "primary category-a",
                 text: cat.text
                 }) %>
+                <time class="panel-time" datetime="2017-04-05">2017.4.5</time>
             </div>
-            <h1 class="card-heading"><%= heading %></h1>
+            <h1 class="panel-heading"><%= heading %></h1>
             <%- include("_author", {
-            mf: "author-card",
+            mf: "author-panel",
             img: author.img,
             authorName: author.authorName,
             info: "品川クリニック美容..."
