@@ -204,6 +204,9 @@
 }
 
 .dictionary {
+    padding-top: 50px;
+    background: url(#{$path-image}/dictionary-bg.png) repeat-x 0 0;
+    background-size: 12px 36px;
     &-heading {
         margin-bottom: 10px;
     }

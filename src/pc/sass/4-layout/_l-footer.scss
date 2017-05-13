@@ -1,18 +1,42 @@
 .l-footer {
-    background-color: $color-default;
+    border-top: 4px solid #F2F0E1;
+    background-color: #F3F3F3;
+    padding: 0 0 20px;
     color: #fff;
     text-align: center;
-    padding: 10px;
     font-size: 10px;
 
-    //Modifier margin
-    &.l-footer-mt {
-        margin-top: 50px;
+    > hr {
+        border-top: 10px solid #fff;
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
     }
-    &.l-footer-mt-sm {
-        margin-top: 30px;
+
+    &-top {
+        background-color: #fff;
+        padding: 10px 0;
+        font-size: 0;
+        letter-spacing: 0;
+        margin-bottom: 10px;
+        > li {
+            display: inline-block;
+            padding: 0 10px;
+            color: $color-gray;
+            border-right: 1px solid $color-gray;
+            &:last-child {
+                border-right: 0;
+            }
+            > a {
+                font-size: 10px;
+                color: $color-default;
+            }
+        }
     }
-    &.l-footer-mt {
-        margin-top: 70px;
+    &-bottom {
+        > small {
+            font-size: 8px;
+            color: #888;
+        }
     }
 }

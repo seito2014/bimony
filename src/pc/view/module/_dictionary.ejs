@@ -1,0 +1,68 @@
+<div class="dictionary">
+
+    <div class="dictionary-heading">
+        <div class="book-heading">
+            <div class="book-heading-inner">
+                <div class="book-heading-icon">
+                    <%- include("../svg/_book") %>
+                </div>
+                <h1 class="book-heading-text">美容医療用語辞典</h1>
+            </div>
+        </div>
+    </div>
+    <div class="dictionary-search">
+        <form class="search" action="#">
+            <div class="search-icon">
+                <%- include("../svg/_search") %>
+            </div>
+            <input class="search-input" type="search" placeholder="辞典内を検索">
+            <button class="search-button" type="submit">検索</button>
+        </form>
+    </div>
+    <div class="dictionary-keywords">
+        <dl class="keywords">
+            <dt class="keywords-title">
+                Today’s ホットキーワード
+            </dt>
+            <dd class="keywords-data">
+                <a href="">脂肪吸引</a>、　<a href="">豊胸</a>、　<a href="">プチ整形</a>、 <a href="">カウンセリング</a>、　<a href="">コンデンスリッチ豊胸</a>
+            </dd>
+        </dl>
+    </div>
+    <section class="dictionary-words">
+
+        <%- include("_heading", {
+        icon: include("../svg/_favorite"),
+        text: "よく調べられている用語"
+        }); %>
+
+        <ul class="dictionary-list">
+            <% for(var iWord = 0; iWord < 5; iWord++) { %>
+            <li>
+                <a class="word" href="">
+                    <dl class="word-inner">
+                        <dt class="word-title">
+                        <div class="word-title-icon">
+                            <%- include("../svg/_search") %>
+                        </div>
+                        <div class="word-title-text">
+                            脂肪吸引
+                        </div>
+                        </dt>
+                        <dd class="word-data">
+                            皮下脂肪を特殊な吸引管で取り除く手術を指す。皮下脂肪に悩んでいる人、部分的に脂肪を……
+                        </dd>
+                    </dl>
+                </a>
+            </li>
+            <% } %>
+        </ul>
+    </section>
+
+    <div class="dictionary-link">
+        <%- include("_link", {
+        mf: "",
+        text: "もっとみる"
+        }); %>
+    </div>
+</div>
