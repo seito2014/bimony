@@ -23,6 +23,12 @@
 @import "4-layout/l-sidebar";
 @import "4-layout/l-grid";
 @import "4-layout/l-index";
+
+/*
+library
+*/
+@import "../lib/slick-carousel/slick/slick.css";
+
 /*
 * 5-module
 */
@@ -50,22 +56,45 @@
 @import "6-utility/utility";
 
 .author {
+
+    $this: &;
+
     overflow: hidden;
 
     &-img {
         float: left;
-        width: 20%;
+        width: 28px;
+        height: 28px;
         border-radius: 50%;
     }
     &-body {
         color: $color-gray;
-        margin-left: calc(20% + 5px);
+        margin-left: 28px + 5px;
     }
     &-name {
         font-size: 12px;
     }
     &-info {
         font-size: 10px;
+    }
+
+    //modifier
+    &-card {
+        #{$this}{
+            &-body {
+                color: #fff;
+            }
+            &-name {
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 11px;
+            }
+            &-info {
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 11px;
+            }
+        }
     }
 }
 
@@ -268,3 +297,106 @@
         color: #555;
     }
 }
+
+.trigger {
+    text-align: center;
+    display: block;
+    width: 38px;
+
+    > span {
+        display: block;
+        background-color: $color-gray;
+        width: 14px;
+        height: 3px;
+        margin: 2px auto;
+    }
+    &-text {
+        font-size: 8px;
+        color: $color-gray;
+    }
+}
+
+.hero {
+    padding: 20px 0;
+    background-color: #F2F0E1;
+
+    &-heading {
+        text-align: center;
+        font-size: 14px;
+        letter-spacing: .05em;
+        margin-bottom: 20px;
+    }
+
+    &-slider {
+        .slick-slide {
+            padding: 0 18px;
+        }
+    }
+
+    .slick-dots {
+        text-align: center;
+
+        > li {
+            display: inline-block;
+            margin: 0 5px;
+
+            > button {
+                font-size: 0;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background-color: $color-gray;
+            }
+
+            &.slick-active {
+                > button {
+                    background-color: #EB8E6C;
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}
+
+.card {
+    $this: &;
+    
+    &-link {
+        display: block;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        color: #fff;
+    }
+
+    &-category {
+        text-align: center;
+    }
+
+    &-inner {
+        padding: 10px;
+    }
+
+    &-heading {
+        font-size: 14px;
+        margin: 32px 0 10px;
+    }
+    
+    //modifier
+    &-a {
+        #{$this}-inner {
+            background-color: rgba(#FFA93D, .5);
+        }
+    }
+    &-b {
+        #{$this}-inner {
+            background-color: rgba(#5FBF00, .5);
+        }
+    }
+    &-c {
+        #{$this}-inner {
+            background-color: rgba(#1CB0E0, .5);
+        }
+    }
+}
+

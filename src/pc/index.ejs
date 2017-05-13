@@ -12,9 +12,38 @@ var type = "blog";
 <!--start l-contents-->
 <div class="l-index">
 
+    <div class="hero">
+        <h1 class="hero-heading">医師が教える美容整形のコンプレックス<br>解決・応援サイト bimony</h1>
+
+        <ul class="hero-slider" id="js-hero-slider">
+            <% for(var iMedia = 0; iMedia < mediaRankingArray.length; iMedia++) { %>
+            <li>
+                <%- include("./view/module/_card", {
+                num: iMedia + 1,
+                mf: "card-" + mediaRankingArray[iMedia].category,
+                img: mediaRankingArray[iMedia].img.src,
+                height: mediaRankingArray[iMedia].img.height,
+                width: mediaRankingArray[iMedia].img.width,
+                alt: mediaRankingArray[iMedia].img.alt,
+                cat: {
+                mf: mediaRankingArray[iMedia].category,
+                text: "目・二重の整形"
+                },
+                heading: mediaRankingArray[iMedia].heading,
+                author: {
+                mf: mediaRankingArray[iMedia].author.mf,
+                img: mediaRankingArray[iMedia].author.img,
+                authorName: mediaRankingArray[iMedia].author.authorName,
+                info: mediaRankingArray[iMedia].author.info
+                }
+                }) %>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+
     <%- include("./view/module/_ranking") %>
     <%- include("./view/module/_dictionary") %>
-
 
 </div>
 

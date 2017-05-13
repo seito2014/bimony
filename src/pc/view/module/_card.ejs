@@ -1,0 +1,19 @@
+<article class="card <%= mf %>">
+    <a class="card-link" href="" style="background-image: url(<%= img %>);">
+        <div class="card-inner">
+            <div class="card-category">
+                <%- include("_category", {
+                mf: "primary category-a",
+                text: cat.text
+                }) %>
+            </div>
+            <h1 class="card-heading"><%= heading %></h1>
+            <%- include("_author", {
+            mf: "author-card",
+            img: author.img,
+            authorName: author.authorName,
+            info: author.info
+            }) %>
+        </div>
+    </a>
+</article>
