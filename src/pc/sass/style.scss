@@ -79,8 +79,18 @@ library
     //modifier
     &-card {
         #{$this} {
+            &-img {
+                @include queryLager($break-large) {
+                    width: 44px;
+                    height: 44px;
+                }
+            }
             &-body {
                 color: #fff;
+                @include queryLager($break-large) {
+                    height: 34px;
+                    margin: 10px 0 0 54px;
+                }
             }
             &-name {
                 display: inline-block;
@@ -88,11 +98,19 @@ library
                 font-size: 11px;
                 padding-right: 5px;
                 border-right: 1px solid #fff;
+
+                @include queryLager($break-large) {
+                    font-size: 14px;
+                }
             }
             &-info {
                 display: inline-block;
                 vertical-align: middle;
                 font-size: 11px;
+
+                @include queryLager($break-large) {
+                    font-size: 14px;
+                }
             }
         }
     }
@@ -149,6 +167,10 @@ library
         display: inline-block;
         vertical-align: middle;
         font-size: 12px;
+
+        @include queryLager($break-large) {
+            font-size: 18px;
+        }
     }
 }
 
@@ -250,11 +272,17 @@ library
     padding-top: 50px;
     background: url(#{$path-image}/dictionary-bg.png) repeat-x 0 0;
     background-size: 12px 36px;
+
     &-heading {
         margin-bottom: 10px;
     }
     &-search {
         padding: 0 18px;
+
+        @include queryLager($break-large) {
+            width: 350px;
+            margin: 0 auto;
+        }
     }
     &-keywords {
         margin-top: -20px;
@@ -345,6 +373,10 @@ library
         text-align: center;
         font-size: 14px;
         letter-spacing: .05em;
+
+        @include queryLager($break-large) {
+            font-size: 22px;
+        }
     }
 
     &-slider {
@@ -406,6 +438,10 @@ library
     .slick-dots {
         text-align: center;
 
+        @include queryLager($break-large) {
+            margin-top: 30px;
+        }
+
         > li {
             display: inline-block;
             margin: 0 5px;
@@ -416,6 +452,11 @@ library
                 height: 8px;
                 border-radius: 50%;
                 background-color: $color-gray;
+
+                @include queryLager($break-large) {
+                    width: 12px;
+                    height: 12px;
+                }
             }
 
             &.slick-active {
@@ -435,7 +476,7 @@ library
     overflow: hidden;
 
     @include queryLager($break-large) {
-        width: 420px;
+        width: 480px;
     }
 
     &-link {
@@ -460,7 +501,7 @@ library
         z-index: 2;
 
         @include queryLager($break-large) {
-            padding: 20px;
+            padding: 13px 12px;
         }
     }
 
@@ -476,7 +517,8 @@ library
         margin: 32px 0 10px;
 
         @include queryLager($break-large) {
-            font-size: 18px;
+            margin: 52px 0 25px;
+            font-size: 26px;
         }
     }
 
@@ -520,9 +562,19 @@ library
     font-size: 9px;
     position: relative;
 
+    @include queryLager($break-large) {
+        width: 48px;
+        height: 48px;
+        font-size: 13px;
+    }
+
     > span {
         position: absolute;
         transform: rotate(-45deg) translate(-2px, 7px);
+
+        @include queryLager($break-large) {
+            transform: rotate(-45deg) translate(-6px, 14px);
+        }
     }
 }
 
@@ -585,7 +637,11 @@ library
     &-heading {
         font-size: 12px;
         margin: 5px 0 10px;
-        height: 57px;
+        height: 3em * 1.6;
+
+        @include queryLager($break-large) {
+
+        }
     }
 
     //modifier
@@ -635,6 +691,7 @@ library
     }
     &-grid {
         &-inner {
+            margin: 0 -10px;
         }
         &-item {
             padding: 10px;
@@ -772,6 +829,11 @@ library
 
 .gnav {
     padding: 20px 0;
+
+    @include queryLager($break-large) {
+        padding: 10px 0;
+    }
+
     &-list {
         margin: 0 -20px;
     }

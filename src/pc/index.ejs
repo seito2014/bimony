@@ -49,7 +49,7 @@ var type = "blog";
     <div class="l-container u-clear">
         <div class="l-main">
             <div class="l-index-recommend">
-                <div class="recommend">
+                <section class="recommend">
                     <div class="recommend-heading">
                         <%- include("./view/module/_heading", {
                         icon: include("./view/svg/_stars"),
@@ -112,8 +112,14 @@ var type = "blog";
                         text: "お悩み・施術別にさがす"
                         }); %>
                     </div>
-                </div>
+                </section>
             </div>
+
+            <div class="sidebar-sp">
+                <%- include("./view/module/_ranking") %>
+            </div>
+            <%- include("./view/module/_dictionary") %>
+
         </div>
 
         <div class="l-sidebar">
@@ -124,11 +130,6 @@ var type = "blog";
                 </a>
             </div>
         </div>
-    </div>
-
-    <div class="sidebar-sp">
-        <%- include("./view/module/_ranking") %>
-        <%- include("./view/module/_dictionary") %>
     </div>
 
 </div>

@@ -13,6 +13,10 @@
     &-right {
         float: right;
         margin-top: 5px;
+
+        @include queryLager($break-large) {
+            margin-top: 0;
+        }
     }
     &-gnav {
         display: none;

@@ -6,11 +6,17 @@
     text-align: center;
     font-size: 10px;
 
+    @include queryLager($break-large) {
+        border: 0;
+        margin-top: 100px;
+    }
+
     > hr {
         border-top: 10px solid #fff;
         width: 100%;
         display: block;
         margin-bottom: 20px;
+
     }
 
     &-top {
@@ -19,17 +25,28 @@
         font-size: 0;
         letter-spacing: 0;
         margin-bottom: 10px;
+
+        @include queryLager($break-large) {
+            padding: 20px 0;
+        }
+
         > li {
             display: inline-block;
             padding: 0 10px;
             color: $color-gray;
             border-right: 1px solid $color-gray;
+
             &:last-child {
                 border-right: 0;
             }
+
             > a {
                 font-size: 10px;
                 color: $color-default;
+
+                @include queryLager($break-large) {
+                    font-size: 12px;
+                }
             }
         }
     }
@@ -37,6 +54,10 @@
         > small {
             font-size: 8px;
             color: #888;
+
+            @include queryLager($break-large) {
+                font-size: 10px;
+            }
         }
     }
 }

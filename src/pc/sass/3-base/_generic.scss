@@ -37,7 +37,7 @@ body {
     padding-top: 68px;
 
     @include queryLager($break-large) {
-        padding-top: 100px;
+        padding-top: 75px;
     }
 }
 
