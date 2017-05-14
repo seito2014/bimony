@@ -27,8 +27,17 @@ category
     }
 
     //modifier
-    &-primary {
+    &-sub {
+        border: 0;
+        padding: 0;
+        width: calc(100% - 60px);
+        position: relative;
+        top: 3px;
+        @extend .u-elps;
 
+        @include queryLager($break-large) {
+            width: calc(100% - 85px);
+        }
     }
 
     &-card {

@@ -1,28 +1,25 @@
-<aside class="ranking">
-    <div class="ranking-heading">
-        <%- include("_heading", {
-        icon: include("../svg/_ranking"),
-        text: "人気記事ランキング"
-        }); %>
-    </div>
+<aside class="watched">
+    <h1 class="watched-heading">
+        監修記事 ( 1-12件を表示 / 12件中 )
+    </h1>
 
-    <ul class="ranking-list">
+    <ul class="watched-list">
         <% for(var iMedia = 0; iMedia < mediaRankingArray.length; iMedia++) { %>
         <li>
             <%- include("_media", {
-            num: iMedia + 1,
-            mf: "media-ranking",
+            num: "",
+            mf: "media-related",
             img: mediaRankingArray[iMedia].img.src,
             height: mediaRankingArray[iMedia].img.height,
             width: mediaRankingArray[iMedia].img.width,
             alt: mediaRankingArray[iMedia].img.alt,
             cat: {
-            mf: mediaRankingArray[iMedia].category,
+            mf: "a category-sub",
             text: "目・二重の整形"
             },
             heading: mediaRankingArray[iMedia].heading,
             author: {
-            mf: mediaRankingArray[iMedia].author.mf,
+            mf: "author-watched",
             img: mediaRankingArray[iMedia].author.img,
             authorName: mediaRankingArray[iMedia].author.authorName,
             info: mediaRankingArray[iMedia].author.info
@@ -31,4 +28,10 @@
         </li>
         <% } %>
     </ul>
+    <div class="recommend-link">
+        <%- include("_link", {
+        mf: "",
+        text: "もっとみる"
+        }); %>
+    </div>
 </aside>

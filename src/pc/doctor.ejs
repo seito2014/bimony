@@ -1,0 +1,79 @@
+<% include view/const/_const %>
+<%
+var id = "doctor";
+var title = "";
+var description = "sample text,sample tex";
+var keywords = "word1,word2,word3";
+var type = "blog";
+%>
+<% include view/metadata/_head %>
+<% include view/module/_nav %>
+<% include view/layout/_l-header %>
+<% include view/module/_bread %>
+
+<!--start l-contents-->
+<div class="l-doctor">
+
+    <div class="l-container u-clear">
+
+        <!--start l-main-->
+        <main class="l-main">
+
+            <div class="l-doctor-doctor">
+                <div class="doctor">
+                    <dt class="doctor-title">
+                        <img src="http://placekitten.com/g/120/120" height="120" width="120" alt="">
+                    </dt>
+                    <dd class="doctor-data">
+                        小林哲行・院長<br>
+                        品川美容外科クリニック渋谷院<br>
+                        監修記事<span>12</span>
+                    </dd>
+                </div>
+            </div>
+
+            <div class="l-doctor-tab">
+                <div class="tab" id="js-tab">
+                <ul class="tab-nav">
+                    <li class="tab-nav-item">
+                        <a class="is-active" href="#js-tab-content-1">
+                            プロフィール
+                        </a>
+                    </li>
+                    <li class="tab-nav-item">
+                        <a href="#js-tab-content-2">
+                            ドクターからの一言
+                        </a>
+                    </li>
+                </ul>
+                <ul class="tab-content">
+                    <li class="tab-content-item" id="js-tab-content-1">
+                        <p>
+                            東京医科大学大学院修了後、自由が丘クリニック勤務、ニューヨーク大学形成外科へ留学、昭和大学病院形成外科に研究生として参加後、現職。医学博士。医療法人社団 豊季会 理事長。<br>
+                            JAASアカデミー学長・塾長。日本アンチエイジング外科・美容再生研究会 指導員。TBS Nスタ、フジテレビ FNNスーパーニュースなどメディア出演多数。
+                        </p>
+                    </li>
+                    <li class="tab-content-item" id="js-tab-content-2">
+                        <p>
+                            キレイになるためには、信頼できる医師のもとで手術をすることが大事です。
+                            当院では豊富な経験と高い技術と磨かれたセンスを持った医師が十分にカウンセリングを行い、患者さんの一人一人にあった施術を行います。
+                        </p>
+                    </li>
+                </ul>
+            </div>
+            </div>
+
+            <%- include("./view/module/_watched") %>
+
+        </main>
+        <!--end l-main-->
+
+        <%- include("./view/layout/_l-sidebar") %>
+
+    </div>
+
+</div>
+<!--end l-contents-->
+
+<% include view/layout/_l-footer %>
+<% include view/metadata/_script %>
