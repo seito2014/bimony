@@ -23,6 +23,7 @@
 @import "4-layout/l-sidebar";
 @import "4-layout/l-grid";
 @import "4-layout/l-index";
+@import "4-layout/l-single";
 /*
 library
 */
@@ -949,6 +950,45 @@ library
             &:hover {
                 color: $color-main;
             }
+        }
+    }
+}
+
+.about-author {
+    display: block;
+    background-color: #F2F0E1;
+    overflow: hidden;
+    padding: 20px;
+    color: $color-default;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &-img {
+        float: left;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+    }
+    &-body {
+        margin-left: 56px + 13px;
+        font-size: 11px;
+    }
+    &-title {}
+    &-info {
+        color: $color-main;
+        margin: 3px 0;
+    }
+    &-related {
+        > span {
+            display: inline-block;
+            padding: 0 5px;
+            background-color: $color-main;
+            color: #fff;
+            border-radius: 20px;
+            margin-left: 10px;
         }
     }
 }

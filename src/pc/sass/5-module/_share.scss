@@ -37,22 +37,31 @@ share
 
 .share {
     $this: &;
+    padding: 0 18px;
+
+    @include queryLager($break-large) {
+        padding: 0;
+    }
 
     &-list {
         font-size:0;
         letter-spacing: 0;
-        margin: -5px;
+        margin: 0 -2px;
         text-align: center;
     }
     &-item {
+        width: 25%;
+        font-size: 16px;
         vertical-align: middle;
         display: inline-block;
-        padding: 5px;
+        padding: 0 2px;
         > a {
             display: block;
             color: #fff;
             font-size: 15px;
-            padding: 10px 20px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 4px;
 
             &:hover {
                 text-decoration: none;
