@@ -78,11 +78,34 @@ style comment.
         margin-bottom: 12px;
     }
     &-date {
-        padding: 7px 0;
+        display: inline-block;
+        vertical-align: middle;
         color: $color-gray;
         font-size: 10px;
         position: absolute;
         right: 0;
-        top: 0;
+        top: 6px;
+    }
+
+    //modifier
+    &-related {
+        @include queryLager($break-large) {
+            #{$this} {
+                &-thumbnail {
+                    width: 194px;
+                    height: 112px;
+                }
+                &-body {
+                    position: relative;
+                    margin-left: 194px + 40px;
+                }
+                &-date {
+                    position: static;
+                    font-size: 12px;
+                    margin-left: 20px;
+                    margin-top: 2px;
+                }
+            }
+        }
     }
 }

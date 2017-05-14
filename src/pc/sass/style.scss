@@ -114,6 +114,22 @@ library
             }
         }
     }
+
+    &-related {
+        #{$this}{
+            &-body {
+                margin-left: 38px;
+            }
+            &-name {
+                display: inline-block;
+                margin-right: 20px;
+            }
+            &-info {
+                display: inline-block;
+                font-size: 12px;
+            }
+        }
+    }
 }
 
 .link {
@@ -162,6 +178,7 @@ library
         display: inline-block;
         vertical-align: middle;
         margin-right: 5px;
+        line-height: 1;
     }
     &-text {
         display: inline-block;
@@ -175,8 +192,7 @@ library
 }
 
 .ranking {
-    &-heading {
-    }
+    &-heading {}
     &-list {
         padding: 0 18px;
 
@@ -190,8 +206,25 @@ library
         }
     }
 
-    &-link {
+    &-link {}
+}
+
+.related {
+    &-heading {}
+    &-list {
+        padding: 0 18px;
+
+        @include queryLager($break-large) {
+            padding: 0;
+        }
+
+        > li {
+            padding: 18px 0;
+            border-bottom: 1px dashed $color-base;
+        }
     }
+
+    &-link {}
 }
 
 .book-heading {

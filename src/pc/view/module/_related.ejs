@@ -1,0 +1,40 @@
+<aside class="related">
+    <div class="related-heading">
+        <%- include("_heading", {
+        icon: include("../svg/_related"),
+        text: "関連記事"
+        }); %>
+    </div>
+
+    <ul class="related-list">
+        <% for(var iMedia = 0; iMedia < mediaRankingArray.length; iMedia++) { %>
+        <li>
+            <%- include("_media", {
+            num: "",
+            mf: "media-related",
+            img: mediaRankingArray[iMedia].img.src,
+            height: mediaRankingArray[iMedia].img.height,
+            width: mediaRankingArray[iMedia].img.width,
+            alt: mediaRankingArray[iMedia].img.alt,
+            cat: {
+            mf: mediaRankingArray[iMedia].category,
+            text: "目・二重の整形"
+            },
+            heading: mediaRankingArray[iMedia].heading,
+            author: {
+            mf: "author-related",
+            img: mediaRankingArray[iMedia].author.img,
+            authorName: mediaRankingArray[iMedia].author.authorName,
+            info: mediaRankingArray[iMedia].author.info
+            }
+            }) %>
+        </li>
+        <% } %>
+    </ul>
+    <div class="recommend-link">
+        <%- include("_link", {
+        mf: "",
+        text: "もっとみる"
+        }); %>
+    </div>
+</aside>
